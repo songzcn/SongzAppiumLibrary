@@ -1,6 +1,6 @@
 # SongzAppiumLibrary
 对robotframework-appiumlibrary进行了补充，增加了以下关键字<br />
-关键字                  参数                    功能<br />
+<br />
 # current activity 
 返回当前activity名<br />
 # wait activity       
