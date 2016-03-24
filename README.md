@@ -34,3 +34,6 @@
 # select element       
 参数：element index        
 从webelements元素列表中根据index，获取指定的webelement元素<br />
+# click element after find it      
+参数：locator        
+点击长列表中任意可点的元素，ios（tableview）、安卓(listview)通用<br />
