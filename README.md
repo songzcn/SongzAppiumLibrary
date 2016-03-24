@@ -20,6 +20,9 @@
 激活指定的输入法（设备须预安装该输入法）<br />
 # deactivate ime engine     
 恢复当前设备的输入法服务<br />
+# click element after find it      
+参数：locator        
+点击长列表中任意可点的元素，ios（tableview）、安卓(listview)通用<br />
 <br />
 #以下关键字主要针对get elements获取的列表元素而使用<br />
 # get text 
@@ -34,6 +37,4 @@
 # select element       
 参数：element index        
 从webelements元素列表中根据index，获取指定的webelement元素<br />
-# click element after find it      
-参数：locator        
-点击长列表中任意可点的元素，ios（tableview）、安卓(listview)通用<br />
+
