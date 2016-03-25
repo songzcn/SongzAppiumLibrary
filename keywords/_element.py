@@ -6,7 +6,6 @@ from robot.libraries.BuiltIn import BuiltIn
 import ast
 # added by songz
 from robot.utils import timestr_to_secs
-from selenium.webdriver.common.by import By
 # added by songz
 
 class _ElementKeywords(KeywordGroup):
@@ -505,7 +504,6 @@ class _ElementKeywords(KeywordGroup):
         driver.activate_ime_engine(engine)
         self._info("activate the given IME engine on the device.")
 
-
     def deactivate_ime_engine(self):
         """Deactivates the currently active IME engine on the device.    -- added by songz
         Android only.
@@ -533,10 +531,43 @@ class _ElementKeywords(KeywordGroup):
         return element.location
 
     def select_element(self, elements, index):
-        """Return the value of inputted index of elements list.     - added by songz
+        """Return the value of inputted index of elements list.
+           the format of elements list must be ${els}: a variable, not a list variable  - added by songz
         """
         element = elements[int(index)]
         return element
+
+    def click_element_after_find_it(self,locator):
+        """Foreach the identifies, and click the text-matched element identified by `locator`.
+
+        Key attributes for arbitrary elements are `index` and `name`. See
+        `introduction` for details about locating elements.    - added by songz
+        """
+        driver = self._current_application()
+        size = driver.get_window_size()
+        width = int(size['width'])
+        height = int(size['height'])
+        self._info("Clicking element after find it: '%s'." % locator)
+
+        isFinded = False
+        while not isFinded:
+            try:
+                element = self._element_find(locator,True,True)
+                element.click()
+                isFinded = True
+            except:
+                driver.swipe(width/2, height*7/8, width/2, 1)
+                self._info("Swipe to the end of the page.")
+                isFinded = False
+
+    def click_by_element_given(self, element):
+        """Click element by element given.
+           :argument element    - added by songz
+        """
+        self._info("click by element given.")
+        element.click()
+
+
 
 
 

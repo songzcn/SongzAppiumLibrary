@@ -51,11 +51,21 @@ class _TouchKeywords(KeywordGroup):
         element = self._element_find(locator, True, True)
         driver.execute_script("mobile: scrollTo", {"element": element.id})
         
-    def long_press(self, locator):
-        """ Long press the element """
+    # def long_press(self, locator):
+    #     """ Long press the element """
+    #     driver = self._current_application()
+    #     element = self._element_find(locator, True, True)
+    #     long_press = TouchAction(driver).long_press(element)
+    #     long_press.perform()
+
+    def long_click(self, locator, dur):
+        """ Long press the element
+        :Args:
+        locator, duration(ms)           - added by songz
+        """
         driver = self._current_application()
         element = self._element_find(locator, True, True)
-        long_press = TouchAction(driver).long_press(element)
+        long_press = TouchAction(driver).long_press(el=element, x=None, y=None, duration=dur)
         long_press.perform()
 
     def tap(self, locator):
@@ -74,3 +84,14 @@ class _TouchKeywords(KeywordGroup):
             action.press(x=float(x), y=float(y)).perform()
         except:
             assert False, "Can't click on a point at (%s,%s)" % (x,y)
+
+    def swipe_percentage(self,p1,p2,p3,p4):
+        """
+        Swipe from one point to another point by percentage, for an optional duration.
+        :argument percentage like 0.5,0.27 is ok     - added by songz
+        """
+        driver = self._current_application()
+        size = driver.get_window_size()
+        width = int(size['width'])
+        height = int(size['height'])
+        driver.swipe(width*float(p1),height*float(p2),width*float(p3),height*float(p4))
