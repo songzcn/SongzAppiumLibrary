@@ -36,5 +36,5 @@
 获取元素的大小属性<br />
 # select element       
 参数：element index        
-从webelements元素列表中根据index，获取指定的webelement元素<br />
+从webelements元素中根据index，获取指定的webelement元素，用法为 ${el} select element ${els}<br />
 
