@@ -559,6 +559,13 @@ class _ElementKeywords(KeywordGroup):
                 self._info("Swipe to the end of the page.")
                 isFinded = False
 
+    def click_by_element_given(self, element):
+        """Click element by element given.
+           :argument element    - added by songz
+        """
+        self._info("click by element given.")
+        element.click()
+
 
 
 
