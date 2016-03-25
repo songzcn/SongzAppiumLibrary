@@ -1,5 +1,7 @@
 # SongzAppiumLibrary
 对robotframework-appiumlibrary进行了补充，增加了以下关键字<br />
+# 安装方法
+下载到python27\Lib\site-packages目录下，更改文件夹名为SongzAppiumLibrary。使用时导入SongzAppiumLibrary，不再导入AppiumLibrary<br />
 <br />
 # current activity 
 返回当前activity名<br />
