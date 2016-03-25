@@ -23,6 +23,9 @@
 # click element after find it      
 参数：locator        
 点击长列表中任意可点的元素，ios（tableview）、安卓(listview)通用<br />
+# swipe percentage      
+参数：p1 p2 p3 p4 (arguments like 0.5,0.75,0.435)        
+按比率划屏<br />
 <br />
 #以下关键字主要针对get elements获取的列表元素而使用<br />
 # get text 
@@ -37,4 +40,7 @@
 # select element       
 参数：element index        
 从webelements元素中根据index，获取指定的webelement元素，用法为 ${el} select element ${els}<br />
+# click by element given            
+参数：element                 
+点击指定元素<br />
 
