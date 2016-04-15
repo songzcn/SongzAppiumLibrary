@@ -33,7 +33,7 @@
 参数：element p1 p2 p3 p4(arguments like 0.5,0.75,0.435) duration      
 在元素内，按比率划动元素<br />
 <br />
-get element
+# get element
 参数：locator      
 获取指定元素<br />
 <br />
