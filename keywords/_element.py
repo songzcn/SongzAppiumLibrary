@@ -476,6 +476,7 @@ class _ElementKeywords(KeywordGroup):
     def available_ime_engines(self):
         """Get the available input methods for an Android device. Package and
         activity are returned (e.g., ['com.android.inputmethod.latin/.LatinIME'])    -- added by songz
+
         Android only.
         """
         driver = self._current_application()
@@ -485,6 +486,7 @@ class _ElementKeywords(KeywordGroup):
 
     def is_ime_active(self):
         """Checks whether the device has IME service active. Returns True/False.    -- added by songz
+
         Android only.
         """
         driver = self._current_application()
@@ -494,6 +496,7 @@ class _ElementKeywords(KeywordGroup):
 
     def activate_ime_engine(self, engine):
         """Activates the given IME engine on the device.
+
         Android only.
 
         :Args:
@@ -506,6 +509,7 @@ class _ElementKeywords(KeywordGroup):
 
     def deactivate_ime_engine(self):
         """Deactivates the currently active IME engine on the device.    -- added by songz
+
         Android only.
         """
         driver = self._current_application()
@@ -532,6 +536,7 @@ class _ElementKeywords(KeywordGroup):
 
     def select_element(self, elements, index):
         """Return the value of inputted index of elements list.
+
            the format of elements list must be ${els}: a variable, not a list variable  - added by songz
         """
         element = elements[int(index)]
@@ -562,11 +567,18 @@ class _ElementKeywords(KeywordGroup):
 
     def click_by_element_given(self, element):
         """Click element by element given.
+
            :argument element    - added by songz
         """
         self._info("click by element given.")
         element.click()
 
+    def get_element(self, locator, first_element_only=True, fail_on_error=True):
+        """Return element that match the search criteria.
+
+        Returns webelement Object.   - added by songz
+        """
+        return self._element_find(locator, first_element_only, fail_on_error)
 
 
 

@@ -85,7 +85,7 @@ class _TouchKeywords(KeywordGroup):
         except:
             assert False, "Can't click on a point at (%s,%s)" % (x,y)
 
-    def swipe_percentage(self,p1,p2,p3,p4):
+    def swipe_percentage(self,p1,p2,p3,p4,duration=1000):
         """
         Swipe from one point to another point by percentage, for an optional duration.
         :argument percentage like 0.5,0.27 is ok     - added by songz
@@ -94,4 +94,22 @@ class _TouchKeywords(KeywordGroup):
         size = driver.get_window_size()
         width = int(size['width'])
         height = int(size['height'])
-        driver.swipe(width*float(p1),height*float(p2),width*float(p3),height*float(p4))
+        driver.swipe(width*float(p1),height*float(p2),width*float(p3),height*float(p4),duration)
+
+    def swipe_element_percentage(self,element,p1,p2,p3,p4,duration=1000):
+        """
+        Swipe from one point to another point in selected element by percentage, for an optional duration.
+        :argument percentage like 0.5,0.27 is ok     - added by songz
+        """
+        driver = self._current_application()
+        loc = element.location
+        sz = element.size
+        locx = int(loc['x'])
+        locy = int(loc['y'])
+        width = int(sz['width'])
+        height = int(sz['height'])
+        x1 = locx + width*float(p1)
+        y1 = locy + height*float(p2)
+        x2 = locx + width*float(p3)
+        y2 = locy + height*float(p4)
+        driver.swipe(x1,y1,x2,y2,duration)
