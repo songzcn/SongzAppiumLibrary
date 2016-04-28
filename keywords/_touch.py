@@ -65,7 +65,7 @@ class _TouchKeywords(KeywordGroup):
         """
         driver = self._current_application()
         element = self._element_find(locator, True, True)
-        long_press = TouchAction(driver).long_press(el=element, x=None, y=None, duration=dur)
+        long_press = TouchAction(driver).press(element,x=None,y=None).wait(dur).release()
         long_press.perform()
 
     def tap(self, locator):
