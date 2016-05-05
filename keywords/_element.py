@@ -580,6 +580,13 @@ class _ElementKeywords(KeywordGroup):
         """
         return self._element_find(locator, first_element_only, fail_on_error)
 
+    def send_keys(self, element, text):
+        """Types the given `text` into text field.   - added by songz
+        """
+        self._info("Typing text '%s' into text field.'" % (text))
+        element.send_keys(text)
+
+
 
 
 
