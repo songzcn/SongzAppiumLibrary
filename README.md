@@ -53,4 +53,7 @@
 # click by element given            
 参数：element                 
 点击指定元素<br />
+# send keys            
+参数：element                 
+在指定元素内输入<br />
 
