@@ -7,6 +7,7 @@ import ast
 # added by songz
 from robot.utils import timestr_to_secs
 # added by songz
+import time
 
 class _ElementKeywords(KeywordGroup):
     def __init__(self):
@@ -561,7 +562,7 @@ class _ElementKeywords(KeywordGroup):
                 element.click()
                 isFinded = True
             except:
-                driver.swipe(width/2, height*7/8, width/2, 1)
+                driver.swipe(width/2, height*7/8, width/2, 1,2000)
                 self._info("Swipe to the end of the page.")
                 isFinded = False
 
@@ -585,6 +586,25 @@ class _ElementKeywords(KeywordGroup):
         """
         self._info("Typing text '%s' into text field.'" % (text))
         element.send_keys(text)
+
+    def back_to_selected_view(self, locator):
+        """Go back to the view which you selected by locator.    - added by songz
+
+           Android only.
+
+        """
+        self._info("Go back to the view which you selected.")
+        driver = self._current_application()
+        finished = 0
+        while finished == 0:
+            driver.press_keycode(4)
+            time.sleep(3)
+            if self._is_element_present(locator):
+                finished = 1
+
+
+
+
 
 
 
