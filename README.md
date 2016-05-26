@@ -37,6 +37,11 @@
 参数：locator      
 获取指定元素<br />
 <br />
+<br />
+# back to selected view
+参数：locator      
+从当前页面通过locator回到指定页面，适用于在返回过程中没有弹出确认框的情况，此方法仅对安卓有效<br />
+<br />
 #以下关键字主要针对get elements获取的列表元素而使用<br />
 # get text 
 参数：element                 
