@@ -220,3 +220,12 @@ class _ApplicationManagementKeywords(KeywordGroup):
     def _rotate(self, orientation):
         driver = self._current_application()
         driver.orientation = orientation
+
+    def install_application(self, app_path):
+        """Install the application found at `app_path` on the device.
+
+        :Args:
+         - app_path - the local or remote path to the application to install. -- added by songz
+        """
+        driver = self._current_application()
+        driver.install_app(app_path)
