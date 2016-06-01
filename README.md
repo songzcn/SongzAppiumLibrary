@@ -42,6 +42,11 @@
 参数：locator      
 从当前页面通过locator回到指定页面，适用于在返回过程中没有弹出确认框的情况，此方法仅对安卓有效<br />
 <br />
+<br />
+# install_application
+参数：app_path      
+安装应用<br />
+<br />
 #以下关键字主要针对get elements获取的列表元素而使用<br />
 # get text 
 参数：element                 
